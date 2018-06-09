@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: ru.yandex.qatools.embed:postgresql-embedded:2.4:jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/ru.yandex.qatools.embed/postgresql-embedded/jars/postgresql-embedded-2.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ivy2/cache/ru.yandex.qatools.embed/postgresql-embedded/srcs/postgresql-embedded-2.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
