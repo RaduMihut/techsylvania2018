@@ -11,8 +11,8 @@ sealed trait BasicDataStorage{
 }
 
 class JdbcBasicDataStorage(
-                            val databaseConnector: DatabaseConnector
-                          )(implicit executionContext: ExecutionContext) extends BasicDataTable with BasicDataStorage  {
+  val databaseConnector: DatabaseConnector
+)(implicit executionContext: ExecutionContext) extends BasicDataTable with BasicDataStorage  {
 
   import databaseConnector._
   import databaseConnector.profile.api._

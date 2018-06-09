@@ -4,6 +4,7 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import com.techsylvania.console.app.components.basic.{BasicService, JdbcBasicDataStorage}
+import com.techsylvania.console.app.components.sensors.{JdbcSensorDataStorage, SensorService}
 import com.techsylvania.console.app.http.HttpRoute
 import com.techsylvania.console.app.utils.{Config, TechLogging}
 import com.techsylvania.console.app.utils.db.{DatabaseConnector, DatabaseMigrationManager}
@@ -23,8 +24,8 @@ object Main extends App with TechLogging {
     //config
     val config = Config.load()
 
-//    logger.info(s"Config is ${config.toString}")
-//    logger.info(s"Binding To: ${config.http}........................")
+    logger.info(s"Config is ${config.toString}")
+    logger.info(s"Binding To: ${config.http}........................")
 
     //migration
     migrateDatabase(config)
@@ -37,14 +38,18 @@ object Main extends App with TechLogging {
     //connector
     val databaseConnector = createDatabaseConnector(config)
 
-    //language
+    //basic
     val basicDataStorage = new JdbcBasicDataStorage(databaseConnector)
     val basicService = new BasicService(basicDataStorage)
 
+    //sensors
+    val sensorDataStorage = new JdbcSensorDataStorage(databaseConnector)
+    val sensorService = new SensorService(sensorDataStorage)
 
     //routes
     val httpRoute = new HttpRoute(
-      basicService
+      basicService,
+      sensorService
     )
 
     httpRoute
