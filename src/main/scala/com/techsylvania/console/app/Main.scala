@@ -5,12 +5,12 @@ import akka.http.scaladsl.Http
 import akka.stream.ActorMaterializer
 import com.techsylvania.console.app.components.basic.{BasicService, JdbcBasicDataStorage}
 import com.techsylvania.console.app.http.HttpRoute
-import com.techsylvania.console.app.utils.Config
+import com.techsylvania.console.app.utils.{Config, TechLogging}
 import com.techsylvania.console.app.utils.db.{DatabaseConnector, DatabaseMigrationManager}
 
 import scala.concurrent.ExecutionContext
 
-object Main extends App {
+object Main extends App with TechLogging {
   startApplication()
 
   def startApplication() = {
@@ -18,7 +18,7 @@ object Main extends App {
     implicit val executor: ExecutionContext = actorSystem.dispatcher
     implicit val materializer: ActorMaterializer = ActorMaterializer()
 
-//    logger.info("Starting Up HealthSnApp Backend Server.............")
+    logger.info("Starting Up HealthSnApp Backend Server.............")
 
     //config
     val config = Config.load()
