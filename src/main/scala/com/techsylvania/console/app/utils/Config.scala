@@ -3,7 +3,7 @@ package com.techsylvania.console.app.utils
 
 import pureconfig.loadConfig
 
-case class Config(http: HttpConfig, database: DatabaseConfig)
+case class Config(http: HttpConfig, database: DatabaseConfig, email: EmailConfig)
 
 object Config {
   def load() =
@@ -16,3 +16,5 @@ object Config {
 
 private[utils] case class HttpConfig(host: String, port: Int)
 private[utils] case class DatabaseConfig(databaseUrl: String, databaseName: String, username: String, password: String)
+private[utils] case class EmailConfig(adminEmail: String, adminEmailPassword: String)
+
