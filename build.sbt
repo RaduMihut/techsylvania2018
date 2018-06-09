@@ -78,8 +78,9 @@ lazy val root = (project in file(".")).
       "org.slf4j" % "slf4j-log4j12" % "1.7.25",
 
       // Mail
-      "javax.mail" % "mail" % "1.4",
-
+      //"javax.mail" % "mail" % "1.4",
+      "com.sun.mail" % "javax.mail" % "1.5.5",
+      
       //Crypto
       "io.github.jmcardon" %% "tsec-common" % tsecV,
       "io.github.jmcardon" %% "tsec-password" % tsecV,
