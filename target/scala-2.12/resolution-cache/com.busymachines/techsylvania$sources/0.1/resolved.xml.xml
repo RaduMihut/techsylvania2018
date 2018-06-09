@@ -4,7 +4,7 @@
 		module="techsylvania$sources"
 		revision="0.1"
 		status="integration"
-		publication="20180609143923"
+		publication="20180609174117"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
@@ -368,10 +368,6 @@
 		</dependency>
 		<dependency org="io.github.jmcardon" name="tsec-common_2.12" rev="0.0.1-M9" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master">
 			<artifact name="tsec-common_2.12" type="src" ext="jar" conf="*" e:classifier="sources"/>
-			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="junit" name="junit" rev="3.8" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
-			<artifact name="junit" type="src" ext="jar" conf="*" e:classifier="sources"/>
 			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
 		</dependency>
 		<dependency org="org.spire-math" name="jawn-parser_2.12" rev="0.11.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
