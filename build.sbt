@@ -80,7 +80,7 @@ lazy val root = (project in file(".")).
       // Mail
       //"javax.mail" % "mail" % "1.4",
       "com.sun.mail" % "javax.mail" % "1.5.5",
-      
+
       //Crypto
       "io.github.jmcardon" %% "tsec-common" % tsecV,
       "io.github.jmcardon" %% "tsec-password" % tsecV,
