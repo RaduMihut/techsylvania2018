@@ -14,11 +14,9 @@ private[sensors] trait SensorDataTable {
     def sensorId = column[String]("sensor_id")
     def readingTime = column[String]("reading_time")
     def sensorType = column[String]("sensor_type")
-    def measurement1 = column[Double]("measurement1")
-    def measurement2 = column[Double]("measurement2")
-    def measurement3 = column[Double]("measurement3")
+    def measurement = column[Double]("measurement")
 
-    def * = (id, sensorId, readingTime, sensorType, measurement1, measurement2, measurement3) <> ((SensorData.apply _).tupled, SensorData.unapply)
+    def * = (id, sensorId, readingTime, sensorType, measurement) <> ((SensorData.apply _).tupled, SensorData.unapply)
   }
 
   protected val sensors = TableQuery[SensorDataSchema]

@@ -11,12 +11,12 @@ package object components {
   }
 
 
-  case class SensorData(id: Int, sensorId: String, readingTime: String, sensorType: String, measurement1:Double, measurement2:Double, measurement3:Double)
-  case class Sensor(id: Int, sensorId: String, readingTime: String, sensorType: String, measurement1:Double, measurement2:Double, measurement3:Double)
-  case class SensorInput(date: String, ip: String, temperatureC: Double, humidity: Double)
+  case class SensorData(id: Int, sensorId: String, readingTime: String, sensorType: String, measurement:Double)
+  case class Sensor(id: Int, sensorId: String, readingTime: String, sensorType: String, measurement:Double)
+  case class SensorInput(Date: String, IP: String, TemperatureC: Option[Double], Humidity: Option[Double], UVIntensity: Option[Double], Dustmgm3:Option[Double])
 
   object Sensor{
-    def apply(sData: SensorData): Sensor = Sensor(sData.id, sData.sensorId, sData.readingTime, sData.sensorType, sData.measurement1, sData.measurement2, sData.measurement3)
+    def apply(sData: SensorData): Sensor = Sensor(sData.id, sData.sensorId, sData.readingTime, sData.sensorType, sData.measurement)
   }
 
 }

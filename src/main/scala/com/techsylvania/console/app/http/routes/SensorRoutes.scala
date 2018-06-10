@@ -27,7 +27,7 @@ class SensorRoutes(sensorService: SensorService)(implicit executionContext: Exec
 
         //get
         get {
-          complete(sensorService.get().map(_.asJson))
+          complete(sensorService.get())
         } ~
           post {
             entity(as[SensorInput]){
